@@ -288,6 +288,10 @@ Generation is asynchronous and not latency-sensitive, so it runs through the **B
 
 Native apps · a dedicated realtime cluster · phone-to-TV pairing · a real-time content-generation pipeline · separate analytics infrastructure. Each is a later opt-in upgrade (§§11–12), not an MVP requirement.
 
+### Schema
+
+The concrete Phase 1 data model that realizes this stack — every table, the integrity rules, the answer-key security model, and the RLS shape — lives in `data-model-wip.md`.
+
 -----
 
 ## 14. Open Questions / Next Steps
