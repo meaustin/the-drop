@@ -1,6 +1,6 @@
 # The Drop — Initial Product Spec
 
-*Working title (see Open Questions). Status: Initial draft — v0.3. Date: June 11, 2026.*
+*Working title (see Open Questions). Status: Initial draft — v0.4. Date: June 12, 2026.*
 
 -----
 
@@ -250,7 +250,47 @@ Roughly in order of how cleanly each builds on what came before:
 
 -----
 
-## 13. Open Questions / Next Steps
+## 13. Tech Stack
+
+*Resolved June 12, 2026. Optimizes for solo-founder velocity, low ops burden, and low cost at pilot scale (2–3 venues): one language end-to-end, managed services over self-hosted infrastructure, and nothing here that forces a heavier build than the narrow MVP needs.*
+
+### Decision at a glance
+
+|Layer                       |Choice                                                                   |Why                                                                                                  |
+|----------------------------|-------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+|**Language**                |TypeScript everywhere                                                     |One language client-to-server; carries the demo’s web work forward; largest hiring/AI-assist pool.    |
+|**Client**                  |Next.js (App Router) PWA, React                                          |Scan-to-play with no install; add-to-home-screen unlocks iOS push; the house screen and admin are just more routes.|
+|**Hosting**                 |Vercel                                                                   |Zero-config Next.js deploys, edge CDN, cron; free/low tier covers pilots.                             |
+|**Backend platform**        |Supabase — Postgres + Realtime + Auth + Edge Functions + Storage         |Batteries-included BaaS: the synchronized-drop transport, the database, identity, and serverless logic in one managed product.|
+|**Realtime / “shared beat”**|Supabase Realtime (Broadcast + Postgres changes)                         |Fan a drop out to every device in a venue channel near-simultaneously without running a socket fleet. |
+|**Identity**                |Supabase Auth — anonymous → phone OTP                                     |Anonymous session for Tier 1; phone + one-time code (no password) for Tier 2, matching progressive identity (§7).|
+|**Push**                    |Web Push (VAPID) via service worker                                       |The opt-in in-pocket alert; subscriptions stored in Postgres, sent from a serverless function.        |
+|**SMS**                     |Twilio                                                                    |Powers both phone-OTP delivery and Tier-2 return nudges.                                              |
+|**Content engine**          |Anthropic Claude API (`claude-opus-4-8`), Batch API, structured outputs   |Bulk-generate a vetted question library offline and cheaply; human review gate before anything goes live.|
+
+### The critical piece — synchronized drops
+
+The magic is the shared beat (§2), so the realtime transport is the load-bearing choice. A scheduler (a Postgres `pg_cron` job → a Supabase Edge Function) selects the next question for each venue inside its active window and frequency, writes a `drop` row, and **broadcasts it to the `venue:{id}` channel** — every present client and the house screen receive it together.
+
+Per §6, **speed is scored per device from the moment the question renders**, so we do *not* need synchronized clocks: each client stamps render time and answer time and submits the elapsed milliseconds; an edge function validates it (caps the elapsed, rejects duplicates, enforces the one-entry rule and the per-person prize cooldown) and writes the score. Postgres row-level security isolates each venue’s data for the multi-tenant admin.
+
+### The content engine
+
+Generation is asynchronous and not latency-sensitive, so it runs through the **Batch API** (50% cost) against `claude-opus-4-8`, biased toward stable, unambiguous facts. **Structured outputs** return each question as clean JSON (prompt, four options, correct index, category, difficulty, format, plus a self-flagged confidence/ambiguity score). An optional second LLM-as-judge pass pre-filters obviously weak or time-sensitive items; **a human approves what enters the live library** (§9) — raw output never reaches a live prize drop. Live on-demand generation stays deferred to v1.1.
+
+### Watch items / escape hatches
+
+- **Realtime fan-out limits.** Supabase Realtime’s per-project connection and message ceilings are comfortable at pilot scale but are the first thing to monitor as venues grow. Keep the realtime layer behind a thin client interface so a swap to a dedicated provider (Ably, Pusher) is a contained change, not a rewrite.
+- **iOS web push friction** (already noted in §8) — home-screen install is the only door to pocket notifications on iPhone; the in-app live UI and the house screen must carry the live moment for everyone who doesn’t install.
+- **SMS cost** — Twilio is per-message; the venue-set frequency/budget caps and the points-only cooldown keep both SMS and prize spend bounded.
+
+### Deliberately not in the stack yet
+
+Native apps · a dedicated realtime cluster · phone-to-TV pairing · a real-time content-generation pipeline · separate analytics infrastructure. Each is a later opt-in upgrade (§§11–12), not an MVP requirement.
+
+-----
+
+## 14. Open Questions / Next Steps
 
 These are intentionally unresolved at this stage:
 
@@ -259,7 +299,6 @@ These are intentionally unresolved at this stage:
 - **Naming & branding** — “The Drop” is the current working title (it plays on the core mechanic — a question *drops*).
 - **Default cadence** — concrete defaults for drops-per-hour and prize-drop frequency.
 - **Redemption flow detail** — exactly how staff confirm a winner (tap-to-confirm in admin, a PIN, etc.).
-- **Tech stack** — real-time infrastructure for synchronized drops, the push backend, and the content pipeline.
 
 -----
 
