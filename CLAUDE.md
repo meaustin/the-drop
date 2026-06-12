@@ -29,4 +29,4 @@ These two files hold the full, canonical detail. **Read the relevant one before 
 
 ## Build / run
 
-No production code yet. Once a stack is chosen, add build, test, and run commands here so they’re loaded every session.
+No production code yet — the stack is chosen (see §13 of the MVP spec) but not scaffolded. Planned: a TypeScript codebase — Next.js (App Router) PWA on Vercel; Supabase (Postgres + Realtime + Auth + Edge Functions + Storage) as the backend; Twilio for SMS/OTP; and the Anthropic Claude API for the content engine. Add concrete build, test, and run commands here once the app is scaffolded so they’re loaded every session.
