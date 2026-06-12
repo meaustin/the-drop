@@ -1,0 +1,31 @@
+# The Drop
+
+Working title for an **always-on, location-based trivia game for physical venues** (bars, coffee shops, breweries). While people are at a venue, a question periodically “drops” to everyone present at once; players race to answer, the fastest correct answer wins a small real-world prize from the venue, and points feed leaderboards that bring people back. The name plays on the core mechanic — a question *drops*.
+
+It is the ambient, always-on opposite of traditional scheduled/hosted bar trivia. The whole-venue MVP play mode is called the **“House Challenge.”**
+
+## Current stage
+
+Pre-build. The MVP is scoped, the go-to-market plan is written, and a polished offline pitch demo (Phase 0) has been built. The production app has **not** been started. The immediate real-world next step is recruiting 2–3 pilot venues (primary targets: Mo’s Place in Playa del Rey, and Three Weavers in Inglewood).
+
+## Source-of-truth docs
+
+These two files hold the full, canonical detail. **Read the relevant one before working on product or go-to-market decisions, and keep them updated as decisions change — don’t let decisions live only in chat.**
+
+- @mvp-spec-wip.md — product spec: concept, the hybrid game mechanics, progressive identity, notifications, the AI-plus-verification content engine, MVP scope, build phasing, and roadmap.
+- @gtm-spec-wip.md — go-to-market: local-first pilot strategy, target-venue profiles, the in-person pitch + follow-up email + question guide, the pilot offer, and the launch-night playbook.
+
+## Guiding principles (don’t relitigate without reason — rationale is in the spec)
+
+- **Feel like a spontaneous group moment, not solo trivia in public.** Favor shared-awareness over anything that isolates the player.
+- **Frictionless for venues to adopt.** Nothing in the MVP is a hard requirement that would make a venue hesitate (a screen is optional, not required).
+- **Land and expand.** Narrow MVP to get into venues cheaply; later features are opt-in upgrades to an already-captured base.
+
+## Conventions
+
+- “The Drop” is a working title; revisit naming as an open question.
+- When a settled decision changes (pricing, name, scope, pilot results), update the relevant spec file above and adjust its version/date line.
+
+## Build / run
+
+No production code yet. Once a stack is chosen, add build, test, and run commands here so they’re loaded every session.
