@@ -13,7 +13,7 @@ Pre-build. The MVP is scoped, the go-to-market plan is written, and a polished o
 These two files hold the full, canonical detail. **Read the relevant one before working on product or go-to-market decisions, and keep them updated as decisions change — don’t let decisions live only in chat.**
 
 - @mvp-spec-wip.md — product spec: concept, the hybrid game mechanics, progressive identity, notifications, the AI-plus-verification content engine, MVP scope, build phasing, and roadmap.
-- @gtm-spec-wip.md — go-to-market: local-first pilot strategy, target-venue profiles, the in-person pitch + follow-up email + question guide, the pilot offer, and the launch-night playbook.
+- @gtm-plan-wip.md — go-to-market: local-first pilot strategy, target-venue profiles, the in-person pitch + follow-up email + question guide, the pilot offer, and the launch-night playbook.
 - `demo.html` — the Phase 0 offline pitch demo (self-contained HTML, no build needed). A presenter-controlled prototype of the core drop moment used in venue pitches. Run it by opening in a browser or adding to a phone’s home screen. See the Phase 0 section in the MVP spec for what it intentionally fakes vs. what it gets right.
 
 ## Guiding principles (don’t relitigate without reason — rationale is in the spec)
