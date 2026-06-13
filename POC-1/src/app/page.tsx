@@ -82,7 +82,7 @@ export default async function Home() {
       </div>
 
       <footer className="mt-10 text-center text-xs text-muted">
-        Phase 1 MVP · The House Challenge
+        The Drop · Phase 1 MVP
       </footer>
     </main>
   );

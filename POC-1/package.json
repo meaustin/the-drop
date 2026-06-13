@@ -2,7 +2,7 @@
   "name": "the-drop-poc1",
   "version": "0.1.0",
   "private": true,
-  "description": "The Drop — Phase 1 MVP (House Challenge). An always-on, location-based trivia game for physical venues. Supabase + Next.js.",
+  "description": "The Drop — Phase 1 MVP. An always-on, location-based trivia game for physical venues. Supabase + Next.js.",
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build",

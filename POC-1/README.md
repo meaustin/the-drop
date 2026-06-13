@@ -1,9 +1,10 @@
 # The Drop — Phase 1 MVP (POC-1)
 
-The real **House Challenge**: an always-on, location-based trivia game for physical venues. A
-question *drops* to everyone present at once, the fastest correct answer wins a real treat from the
-venue, and leaderboards bring people back. Built on the resolved stack from the spec — **Supabase +
-Next.js**, deployable to **Vercel**.
+**The Drop** — an always-on, location-based trivia game for physical venues. A question *drops* to
+everyone present at once, the fastest correct answer wins a real treat from the venue, and
+leaderboards bring people back. This POC implements the spec's whole-venue MVP play mode (the
+single shared game per venue). Built on the resolved stack from the spec — **Supabase + Next.js**,
+deployable to **Vercel**.
 
 This is a working application, not a clickable demo. It implements live multiplayer drops, the
 hybrid scoring model, prize logic with cooldowns and redemption codes, progressive identity, the
