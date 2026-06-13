@@ -1,0 +1,60 @@
+{
+  "packs": [
+    { "slug": "general", "name": "General Knowledge", "emoji": "🧠", "description": "A bit of everything — stable, unambiguous facts." },
+    { "slug": "music-80s", "name": "80s Music", "emoji": "🎸", "description": "Synths, big hair, bigger choruses." },
+    { "slug": "movies", "name": "Movies", "emoji": "🎬", "description": "Classics and crowd-pleasers." },
+    { "slug": "sports", "name": "Sports", "emoji": "🏈", "description": "Records, rules, and legends." },
+    { "slug": "science", "name": "Science & Nature", "emoji": "🔬", "description": "How the world works." },
+    { "slug": "food-drink", "name": "Food & Drink", "emoji": "🍺", "description": "Made for bars and taprooms." }
+  ],
+  "questions": [
+    { "pack": "general", "format": "multiple_choice", "prompt": "What is the capital of Australia?", "options": ["Sydney", "Canberra", "Melbourne", "Perth"], "correct_option": 1, "category": "Geography", "difficulty": 2 },
+    { "pack": "general", "format": "multiple_choice", "prompt": "How many continents are there on Earth?", "options": ["5", "6", "7", "8"], "correct_option": 2, "category": "Geography", "difficulty": 1 },
+    { "pack": "general", "format": "multiple_choice", "prompt": "Which planet is known as the Red Planet?", "options": ["Venus", "Jupiter", "Mars", "Mercury"], "correct_option": 2, "category": "Space", "difficulty": 1 },
+    { "pack": "general", "format": "multiple_choice", "prompt": "What is the largest ocean on Earth?", "options": ["Atlantic", "Indian", "Arctic", "Pacific"], "correct_option": 3, "category": "Geography", "difficulty": 1 },
+    { "pack": "general", "format": "multiple_choice", "prompt": "How many sides does a hexagon have?", "options": ["5", "6", "7", "8"], "correct_option": 1, "category": "Math", "difficulty": 1 },
+    { "pack": "general", "format": "closest_guess", "prompt": "How many keys are on a standard piano?", "correct_number": 88, "unit": "keys", "category": "Music", "difficulty": 3 },
+    { "pack": "general", "format": "poll", "prompt": "Pineapple on pizza: yes or no?", "options": ["Absolutely yes", "Never", "Only sometimes", "What is wrong with you"], "category": "Opinion", "difficulty": 1 },
+
+    { "pack": "music-80s", "format": "multiple_choice", "prompt": "Which artist released “Thriller” in 1982?", "options": ["Prince", "Michael Jackson", "Lionel Richie", "Stevie Wonder"], "correct_option": 1, "category": "80s Music", "difficulty": 1 },
+    { "pack": "music-80s", "format": "multiple_choice", "prompt": "“Sweet Child o’ Mine” was a hit for which band?", "options": ["Bon Jovi", "Def Leppard", "Guns N’ Roses", "Mötley Crüe"], "correct_option": 2, "category": "80s Music", "difficulty": 2 },
+    { "pack": "music-80s", "format": "multiple_choice", "prompt": "Which band sang “Don’t Stop Believin’” (1981)?", "options": ["Journey", "Foreigner", "Toto", "REO Speedwagon"], "correct_option": 0, "category": "80s Music", "difficulty": 2 },
+    { "pack": "music-80s", "format": "multiple_choice", "prompt": "Madonna’s 1984 hit “Like a ___”?", "options": ["Prayer", "Virgin", "Rolling Stone", "Dream"], "correct_option": 1, "category": "80s Music", "difficulty": 2 },
+    { "pack": "music-80s", "format": "multiple_choice", "prompt": "“Take On Me” was a 1985 hit for which band?", "options": ["a-ha", "Tears for Fears", "Duran Duran", "The Cure"], "correct_option": 0, "category": "80s Music", "difficulty": 3 },
+
+    { "pack": "movies", "format": "multiple_choice", "prompt": "In “The Wizard of Oz,” what color brick road does Dorothy follow?", "options": ["Red", "Yellow", "Gold", "White"], "correct_option": 1, "category": "Movies", "difficulty": 1 },
+    { "pack": "movies", "format": "multiple_choice", "prompt": "Who directed “Jaws” (1975)?", "options": ["George Lucas", "Steven Spielberg", "Martin Scorsese", "Francis Ford Coppola"], "correct_option": 1, "category": "Movies", "difficulty": 2 },
+    { "pack": "movies", "format": "multiple_choice", "prompt": "What is the name of the hobbit played by Elijah Wood in “The Lord of the Rings”?", "options": ["Samwise", "Frodo", "Pippin", "Bilbo"], "correct_option": 1, "category": "Movies", "difficulty": 1 },
+    { "pack": "movies", "format": "multiple_choice", "prompt": "Which 1994 film features the line “Life is like a box of chocolates”?", "options": ["Forrest Gump", "Pulp Fiction", "The Shawshank Redemption", "Speed"], "correct_option": 0, "category": "Movies", "difficulty": 1 },
+    { "pack": "movies", "format": "multiple_choice", "prompt": "In “Star Wars,” what is the name of Han Solo’s ship?", "options": ["X-Wing", "Millennium Falcon", "Star Destroyer", "Slave I"], "correct_option": 1, "category": "Movies", "difficulty": 1 },
+
+    { "pack": "sports", "format": "multiple_choice", "prompt": "How many players are on the field per team in soccer?", "options": ["9", "10", "11", "12"], "correct_option": 2, "category": "Sports", "difficulty": 1 },
+    { "pack": "sports", "format": "multiple_choice", "prompt": "In which sport would you perform a “slam dunk”?", "options": ["Volleyball", "Basketball", "Tennis", "Hockey"], "correct_option": 1, "category": "Sports", "difficulty": 1 },
+    { "pack": "sports", "format": "multiple_choice", "prompt": "How many points is a touchdown worth in American football (before the extra point)?", "options": ["3", "6", "7", "2"], "correct_option": 1, "category": "Sports", "difficulty": 1 },
+    { "pack": "sports", "format": "closest_guess", "prompt": "How many holes are played in a standard round of golf?", "correct_number": 18, "unit": "holes", "category": "Sports", "difficulty": 1 },
+    { "pack": "sports", "format": "multiple_choice", "prompt": "Which country has won the most FIFA World Cup titles (as of 2022)?", "options": ["Germany", "Italy", "Brazil", "Argentina"], "correct_option": 2, "category": "Sports", "difficulty": 2 },
+
+    { "pack": "science", "format": "multiple_choice", "prompt": "What gas do plants primarily absorb from the atmosphere?", "options": ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"], "correct_option": 2, "category": "Biology", "difficulty": 1 },
+    { "pack": "science", "format": "multiple_choice", "prompt": "What is the chemical symbol for gold?", "options": ["Go", "Gd", "Au", "Ag"], "correct_option": 2, "category": "Chemistry", "difficulty": 2 },
+    { "pack": "science", "format": "multiple_choice", "prompt": "How many bones are in the adult human body?", "options": ["186", "206", "226", "246"], "correct_option": 1, "category": "Biology", "difficulty": 3 },
+    { "pack": "science", "format": "closest_guess", "prompt": "At what temperature does water boil at sea level (°C)?", "correct_number": 100, "unit": "°C", "category": "Physics", "difficulty": 1 },
+    { "pack": "science", "format": "multiple_choice", "prompt": "What is the hardest known natural material?", "options": ["Quartz", "Steel", "Diamond", "Titanium"], "correct_option": 2, "category": "Geology", "difficulty": 1 },
+
+    { "pack": "food-drink", "format": "multiple_choice", "prompt": "What grain is the primary ingredient in most beer?", "options": ["Rice", "Barley", "Corn", "Wheat"], "correct_option": 1, "category": "Beer", "difficulty": 2 },
+    { "pack": "food-drink", "format": "multiple_choice", "prompt": "Which of these is a hop-forward, bitter beer style?", "options": ["Stout", "IPA", "Lager", "Porter"], "correct_option": 1, "category": "Beer", "difficulty": 2 },
+    { "pack": "food-drink", "format": "closest_guess", "prompt": "What ABV (%) is a typical session IPA, roughly?", "correct_number": 4.5, "unit": "%", "category": "Beer", "difficulty": 3 },
+    { "pack": "food-drink", "format": "multiple_choice", "prompt": "A margarita is traditionally served with what on the rim?", "options": ["Sugar", "Salt", "Cinnamon", "Pepper"], "correct_option": 1, "category": "Cocktails", "difficulty": 1 },
+    { "pack": "food-drink", "format": "poll", "prompt": "Best bar snack?", "options": ["Wings", "Nachos", "Pretzel", "Fries"], "category": "Opinion", "difficulty": 1 },
+
+    { "pack": "general", "format": "multiple_choice", "prompt": "In what year did the first human land on the Moon?", "options": ["1967", "1969", "1971", "1973"], "correct_option": 1, "category": "History", "difficulty": 2, "status": "pending_review", "ambiguity_score": 0.12 },
+    { "pack": "science", "format": "multiple_choice", "prompt": "Which is the only planet not named after a god?", "options": ["Mars", "Earth", "Saturn", "Neptune"], "correct_option": 1, "category": "Space", "difficulty": 2, "status": "pending_review", "ambiguity_score": 0.55 }
+  ],
+  "venueQuestions": [
+    { "venueSlug": "mos-place", "format": "multiple_choice", "prompt": "What neighborhood is Mo’s Place located in?", "options": ["Venice", "Playa del Rey", "El Segundo", "Marina del Rey"], "correct_option": 1, "category": "Local", "difficulty": 1 },
+    { "venueSlug": "mos-place", "format": "poll", "prompt": "What’s the best night to be at Mo’s?", "options": ["Trivia night", "Game day", "DJ night", "Any night"], "category": "Local", "difficulty": 1 },
+    { "venueSlug": "mos-place", "format": "closest_guess", "prompt": "Roughly how many TV screens does Mo’s have for the game?", "correct_number": 12, "unit": "screens", "category": "Local", "difficulty": 2 },
+    { "venueSlug": "three-weavers", "format": "multiple_choice", "prompt": "Three Weavers Brewing is located in which city?", "options": ["Torrance", "Inglewood", "Hawthorne", "Gardena"], "correct_option": 1, "category": "Local", "difficulty": 1 },
+    { "venueSlug": "three-weavers", "format": "poll", "prompt": "Pick your Three Weavers pour tonight:", "options": ["Expatriate IPA", "A hazy", "Something dark", "Dealer’s choice"], "category": "Local", "difficulty": 1 },
+    { "venueSlug": "three-weavers", "format": "multiple_choice", "prompt": "Three Weavers’ motto is “It’s more than beer, it’s ___.”", "options": ["family", "community", "craft", "love"], "correct_option": 1, "category": "Local", "difficulty": 2 }
+  ]
+}

@@ -1,0 +1,14 @@
+# Supabase CLI config. Run `supabase link --project-ref <ref>` to bind this to your project,
+# then `supabase db push` to apply supabase/migrations.
+# (project_id is set by `supabase link`; this file documents the local defaults.)
+
+project_id = "the-drop"
+
+[db]
+# Postgres major version of Supabase projects.
+major_version = 16
+
+[auth]
+# Tier-1 scan-to-play requires anonymous sign-ins. Also enable this in the dashboard
+# (Authentication → Providers → Anonymous). Phone OTP / OAuth are configured in the dashboard.
+enable_anonymous_sign_ins = true

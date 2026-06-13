@@ -1,0 +1,22 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next
+/out
+next-env.d.ts
+
+# env
+.env
+.env.local
+.env*.local
+
+# local Postgres cluster used only for migration verification in dev
+/.pgdata
+/.pgsock
+
+# misc
+*.log
+.DS_Store
+.vercel
+*.tsbuildinfo
