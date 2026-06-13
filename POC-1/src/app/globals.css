@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-ink text-white antialiased;
+  background-image:
+    radial-gradient(1200px 600px at 50% -10%, rgba(124, 92, 255, 0.18), transparent 60%),
+    radial-gradient(900px 500px at 100% 100%, rgba(255, 61, 113, 0.12), transparent 55%);
+  background-attachment: fixed;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-edge bg-panel/80 backdrop-blur-sm;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 font-semibold transition active:scale-[0.98] disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-drop text-white shadow-[0_8px_30px_-8px] shadow-drop hover:bg-drop-glow;
+  }
+  .btn-ghost {
+    @apply btn border border-edge bg-panel2 text-white hover:border-muted;
+  }
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-edge bg-panel2 px-3 py-1 text-xs font-medium text-muted;
+  }
+  .label {
+    @apply text-xs font-semibold uppercase tracking-wider text-muted;
+  }
+  .input {
+    @apply w-full rounded-xl border border-edge bg-panel2 px-4 py-3 text-white outline-none placeholder:text-muted focus:border-accent;
+  }
+}
+
+/* Tabular numerals for countdowns and scores so they don't jitter. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
